@@ -1,0 +1,403 @@
+[
+  {
+    "main_topic": "Introduction to Stock Market",
+    "subtopics": [
+      {
+        "subtopic": "What is the Stock Market?",
+        "sub_subtopics": ["Definition and role", "Importance in the economy"]
+      },
+      {
+        "subtopic": "Evolution of Indian Stock Markets",
+        "sub_subtopics": ["Pre-liberalization", "Post-1991 reforms"]
+      },
+      {
+        "subtopic": "Key Market Participants",
+        "sub_subtopics": ["Retail investors", "Institutional investors", "Brokers and market makers"]
+      },
+      {
+        "subtopic": "Indian Stock Exchanges",
+        "sub_subtopics": ["NSE", "BSE"]
+      },
+      {
+        "subtopic": "Stock Market Indices",
+        "sub_subtopics": ["Sensex", "Nifty", "Sectoral indices"]
+      }
+    ]
+  },
+  {
+    "main_topic": "Types of Financial Markets",
+    "subtopics": [
+      {
+        "subtopic": "Primary Market",
+        "sub_subtopics": ["IPOs", "FPOs", "Private placements", "Rights Issue"]
+      },
+      {
+        "subtopic": "Secondary Market",
+        "sub_subtopics": ["Trading mechanisms", "Settlement cycles"]
+      },
+      {
+        "subtopic": "Derivatives Market",
+        "sub_subtopics": ["Futures", "Options", "Hedging and speculation"]
+      },
+      {
+        "subtopic": "Debt Market",
+        "sub_subtopics": ["Bonds", "Government securities", "Yield basics"]
+      }
+    ]
+  },
+  {
+    "main_topic": "Equity Instruments",
+    "subtopics": [
+      {
+        "subtopic": "Types of Shares",
+        "sub_subtopics": ["Equity shares", "Preference shares"]
+      },
+      {
+        "subtopic": "Capital Structure",
+        "sub_subtopics": ["Authorized and paid-up capital"]
+      },
+      {
+        "subtopic": "Shareholder Categories",
+        "sub_subtopics": ["Promoters", "Retail and institutional investors"]
+      }
+    ]
+  },
+  {
+    "main_topic": "Corporate Actions",
+    "subtopics": [
+      {
+        "subtopic": "Dividends",
+        "sub_subtopics": ["Interim vs final", "Dividend yield"]
+      },
+      {
+        "subtopic": "Bonus Shares",
+        "sub_subtopics": ["Bonus ratio"]
+      },
+      {
+        "subtopic": "Stock Splits",
+        "sub_subtopics": ["Impact on price"]
+      },
+      {
+        "subtopic": "Rights Issues",
+        "sub_subtopics": ["Eligibility and process", "Trading of Res"]
+      },
+      {
+        "subtopic": "Buybacks",
+        "sub_subtopics": ["Tender vs open market", "Impact on Promoter Holding"]
+      },
+      {
+        "subtopic": "Stock Mergers and Demergers",
+        "sub_subtopics": []
+      }
+    ]
+  },
+  {
+    "main_topic": "Equity Valuation Basics",
+    "subtopics": [
+      {
+        "subtopic": "Valuation Metrics",
+        "sub_subtopics": ["P/E ratio", "P/B ratio", "P/S ratio", "EV/EBITDA", "EV/Sales or PEG ratio", "EPS", "ROE", "ROCE", "Book Value per Share (BVPS)", "Dividend Per Share (DPS)"]
+      },
+      {
+        "subtopic": "Book Value vs Market Value",
+        "sub_subtopics": []
+      },
+      {
+        "subtopic": "Intrinsic Value Basics",
+        "sub_subtopics": ["Concept of DCF"]
+      },
+      {
+        "subtopic": "Discounted Cash Flow (DCF) Method",
+        "sub_subtopics": ["Estimating Free Cash Flows"]
+      }
+    ]
+  },
+  {
+    "main_topic": "Fundamental Analysis",
+    "subtopics": [
+      {
+        "subtopic": "Qualitative and Quantitative Factors",
+        "sub_subtopics": []
+      },
+      {
+        "subtopic": "Financial Statements",
+        "sub_subtopics": ["Balance Sheet", "P&L Statement", "Cash Flow"]
+      },
+      {
+        "subtopic": "Financial Ratios",
+        "sub_subtopics": ["Profitability", "Liquidity"]
+      },
+      {
+        "subtopic": "Business & Sector Analysis",
+        "sub_subtopics": []
+      },
+      {
+        "subtopic": "Economic Indicators",
+        "sub_subtopics": []
+      }
+    ]
+  },
+  {
+    "main_topic": "Technical Analysis",
+    "subtopics": [
+      {
+        "subtopic": "Chart Types",
+        "sub_subtopics": ["Line, bar, candlestick", "Time Frames"]
+      },
+      {
+        "subtopic": "Trends",
+        "sub_subtopics": ["Support and resistance"]
+      },
+      {
+        "subtopic": "Indicators",
+        "sub_subtopics": ["RSI", "MACD", "Moving Averages"]
+      }
+    ]
+  },
+  {
+    "main_topic": "Investment Strategies",
+    "subtopics": [
+      {
+        "subtopic": "Value Investing",
+        "sub_subtopics": []
+      },
+      {
+        "subtopic": "Growth Investing",
+        "sub_subtopics": []
+      },
+      {
+        "subtopic": "Dividend Investing",
+        "sub_subtopics": []
+      },
+      {
+        "subtopic": "SIP (Systematic Investment Plan)",
+        "sub_subtopics": []
+      },
+      {
+        "subtopic": "Asset Allocation",
+        "sub_subtopics": []
+      },
+      {
+        "subtopic": "Portfolio Diversification",
+        "sub_subtopics": []
+      }
+    ]
+  },
+  {
+    "main_topic": "Risk & Return",
+    "subtopics": [
+      {
+        "subtopic": "Types of Risk",
+        "sub_subtopics": ["Market risk", "Liquidity risk", "Geopolitical risk"]
+      },
+      {
+        "subtopic": "Return Types",
+        "sub_subtopics": ["Capital appreciation", "Dividend returns"]
+      },
+      {
+        "subtopic": "Risk Metrics",
+        "sub_subtopics": ["Beta", "Standard deviation"]
+      }
+    ]
+  },
+  {
+    "main_topic": "Trading and Investing in Equities",
+    "subtopics": [
+      {
+        "subtopic": "Intraday vs Delivery",
+        "sub_subtopics": []
+      },
+      {
+        "subtopic": "Order Types",
+        "sub_subtopics": ["Market, Limit, Stop-loss", "IOC, GTC, AMO, Bracket, Cover"]
+      },
+      {
+        "subtopic": "Trading Platforms",
+        "sub_subtopics": []
+      },
+      {
+        "subtopic": "Trading vs Investing Mindset",
+        "sub_subtopics": []
+      }
+    ]
+  },
+  {
+    "main_topic": "Tools & Trading Platforms",
+    "subtopics": [
+      {
+        "subtopic": "Accounts",
+        "sub_subtopics": ["Demat and trading accounts"]
+      },
+      {
+        "subtopic": "Brokers",
+        "sub_subtopics": ["Full-service vs discount"]
+      },
+      {
+        "subtopic": "Trading Platforms",
+        "sub_subtopics": ["Apps and terminals"]
+      },
+      {
+        "subtopic": "Screening Tools and APIs",
+        "sub_subtopics": []
+      },
+      {
+        "subtopic": "Analytics Tools",
+        "sub_subtopics": []
+      }
+    ]
+  },
+  {
+    "main_topic": "Regulatory Framework & Taxation",
+    "subtopics": [
+      {
+        "subtopic": "Regulatory Bodies",
+        "sub_subtopics": ["SEBI, NSE, BSE"]
+      },
+      {
+        "subtopic": "Investor Protection",
+        "sub_subtopics": []
+      },
+      {
+        "subtopic": "Capital Gains Tax",
+        "sub_subtopics": ["LTCG vs STCG", "STT", "Taxation of Dividends"]
+      },
+      {
+        "subtopic": "Compliance",
+        "sub_subtopics": ["KYC, PAN"]
+      },
+      {
+        "subtopic": "Insider Trading Regulations",
+        "sub_subtopics": []
+      }
+    ]
+  },
+  {
+    "main_topic": "Psychology of Investing",
+    "subtopics": [
+      {
+        "subtopic": "Behavioral Biases",
+        "sub_subtopics": ["Overconfidence, loss aversion"]
+      },
+      {
+        "subtopic": "Emotional Control",
+        "sub_subtopics": []
+      },
+      {
+        "subtopic": "Goal-Based Investing",
+        "sub_subtopics": []
+      }
+    ]
+  },
+  {
+    "main_topic": "Case Studies",
+    "subtopics": [
+      {
+        "subtopic": "Success Stories",
+        "sub_subtopics": ["Infosys, TCS, HDFC Bank"]
+      },
+      {
+        "subtopic": "IPOs",
+        "sub_subtopics": []
+      },
+      {
+        "subtopic": "Investor Mistakes",
+        "sub_subtopics": []
+      },
+      {
+        "subtopic": "Market Crashes & Recoveries",
+        "sub_subtopics": []
+      }
+    ]
+  },
+  {
+    "main_topic": "Geopolitical Risk in Stock Market",
+    "subtopics": [
+      {
+        "subtopic": "What is Geopolitical Risk?",
+        "sub_subtopics": []
+      },
+      {
+        "subtopic": "Impact on Indian Market",
+        "sub_subtopics": []
+      },
+      {
+        "subtopic": "Sectoral Sensitivity",
+        "sub_subtopics": []
+      },
+      {
+        "subtopic": "Case Studies",
+        "sub_subtopics": []
+      },
+      {
+        "subtopic": "Investor Sentiment",
+        "sub_subtopics": []
+      },
+      {
+        "subtopic": "Risk Management",
+        "sub_subtopics": []
+      },
+      {
+        "subtopic": "Tracking Tools",
+        "sub_subtopics": []
+      },
+      {
+        "subtopic": "Risk vs Opportunity Framework",
+        "sub_subtopics": []
+      },
+      {
+        "subtopic": "Key Global Factors That Influence Indian Stock Market",
+        "sub_subtopics": [
+          "US Federal Reserve decisions",
+          "Crude oil prices",
+          "FII/DII flows",
+          "Dollar index (DXY)",
+          "Global geopolitical events",
+          "US inflation and interest rates",
+          "Tech sector trends globally",
+          "Global trade policies and sanctions"
+        ]
+      }
+    ]
+  },
+  {
+    "main_topic": "Practical Market Strategies",
+    "subtopics": [
+      {
+        "subtopic": "Long-Term Strategies",
+        "sub_subtopics": ["Value, growth, dividend"]
+      },
+      {
+        "subtopic": "Short-Term Trading",
+        "sub_subtopics": ["Swing, breakout, intraday"]
+      },
+      {
+        "subtopic": "SIP and Compounding",
+        "sub_subtopics": []
+      },
+      {
+        "subtopic": "Asset Allocation",
+        "sub_subtopics": []
+      },
+      {
+        "subtopic": "Risk Control",
+        "sub_subtopics": []
+      },
+      {
+        "subtopic": "Sector Rotation",
+        "sub_subtopics": []
+      },
+      {
+        "subtopic": "Tax-Efficient Investing",
+        "sub_subtopics": []
+      },
+      {
+        "subtopic": "Behavioral Strategies",
+        "sub_subtopics": []
+      },
+      {
+        "subtopic": "Crisis Strategies (Geopolitical events)",
+        "sub_subtopics": []
+      }
+    ]
+  }
+]

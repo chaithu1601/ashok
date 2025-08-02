@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Select Equity Topics</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Public Sans', sans-serif;
+      background: url('{{ url_for('static', filename='images/12.png') }}') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      background-color: transparent;
+      z-index: 10;
+    }
+
+    .brand {
+      font-size: 32px;
+      font-weight: 800;
+      color: #ffc107;
+      letter-spacing: 1px;
+      margin-left: 150px;
+      background-color: transparent;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      margin-left: 40px;
+      font-weight: 600;
+      font-size: 16px;
+      position: relative;
+      padding-bottom: 4px;
+      transition: all 0.2s ease-in-out;
+    }
+
+    nav a:hover::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 2px;
+      width: 100%;
+      background: #00bcd4;
+    }
+
+    .container {
+      text-align: center;
+      padding: 60px 20px;
+      background: rgba(0, 0, 0, 0.6);
+      flex: 1;
+      background-color: transparent
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 30px;
+    }
+
+    .error {
+      color: #ff4c4c;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .select-all {
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
+
+    .topics-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto 30px;
+      padding: 0 20px;
+    }
+
+    label {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 12px;
+      height: 80px;
+      background-color: rgba(247, 245, 247, 0.1);
+      border: 2px solid #00bcd4;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+      text-align: left;
+    }
+
+    label:hover {
+      background-color: rgba(0, 188, 212, 0.2);
+    }
+
+    input[type="checkbox"] {
+      margin-right: 10px;
+      transform: scale(1.2);
+      cursor: pointer;
+    }
+
+    .submit-btn {
+      background-color: #00bcd4;
+      color: white;
+      padding: 12px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .submit-btn:hover {
+      background-color: #008c9e;
+    }
+
+    footer {
+      padding: 20px 60px;
+      text-align: right;
+      font-size: 14px;
+      font-weight: 400;
+      color: #eee;
+      background-color: transparent;
+    }
+
+    @media (max-width: 1200px) {
+      .topics-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px 20px;
+      }
+
+      nav {
+        margin-top: 10px;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      nav a {
+        margin: 8px 0;
+        font-size: 14px;
+      }
+
+      .brand {
+        margin-left: 0;
+      }
+
+      .topics-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      label {
+        font-size: 15px;
+        height: auto;
+        padding: 10px;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .submit-btn {
+        font-size: 16px;
+        padding: 10px 25px;
+      }
+
+      footer {
+        text-align: center;
+        padding: 15px 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .topics-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
+  <script>
+    function validateForm() {
+      const checked = document.querySelectorAll('input[name="topics"]:checked').length;
+      if (checked < 3) {
+        alert("⚠️ Please select at least 3 topics to proceed.");
+        return false;
+      }
+      return true;
+    }
+
+    function toggleAllTopics(source) {
+      const checkboxes = document.querySelectorAll('input[name="topics"]');
+      checkboxes.forEach(cb => cb.checked = source.checked);
+    }
+  </script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="brand">MARKET WATCH</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Help</a>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <h1>Select at least 3 Equity Topics</h1>
+
+    <!-- Flash Message -->
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <div class="error">{{ messages[0] }}</div>
+      {% endif %}
+    {% endwith %}
+
+    <form method="POST" action="/topics" onsubmit="return validateForm();">
+      <div class="select-all">
+        <label>
+          <input type="checkbox" id="select-all" onchange="toggleAllTopics(this)">
+          <strong>Select All Topics</strong>
+        </label>
+      </div>
+
+      <div class="topics-grid">
+        {% for topic in topics %}
+          <label>
+            <input type="checkbox" name="topics" value="{{ topic.main_topic }}">
+            {{ topic.main_topic }}
+          </label>
+        {% endfor %}
+      </div>
+
+      <button type="submit" class="submit-btn">Start Test</button>
+    </form>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Marketwatch.com, All rights reserved.
+  </footer>
+
+</body>
+</html>
