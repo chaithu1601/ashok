@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Smarter Way to Learn the Stock Market</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Public Sans', sans-serif;
+      background: url('{{ url_for('static', filename='images/ashok.png') }}') no-repeat center center fixed;
+      background-size: cover;
+      color: #ffffff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      background-color: transparent;
+      z-index: 10;
+    }
+
+    .brand {
+      font-size: 32px;            /* Same size as main heading */
+      font-weight: 800;           /* Matches STOCK MARKET weight */
+      color: #ffc107;             /* Same yellow color */
+      letter-spacing: 1px;
+      font-family: 'Public Sans', sans-serif;
+      margin-left: 160px;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      margin-left: 40px;
+      font-weight: 600;
+      font-size: 16px;
+      position: relative;
+      padding-bottom: 4px;
+      transition: all 0.2s ease-in-out;
+    }
+
+    nav a:hover::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 2px;
+      width: 100%;
+      background: #00bcd4;
+    }
+
+    .main-wrapper {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      padding: 60px 80px;
+    }
+
+    .content {
+      max-width: 600px;
+      text-align: center;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+      margin-left: 620px;
+    }
+
+    .content h1 {
+      font-size: 48px;
+      font-weight: 800;
+      text-transform: uppercase;
+      line-height: 1.3;
+      margin-bottom: 25px;
+    }
+
+    .content h1 span {
+      color: #ffc107;
+    }
+
+    .content p {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+      line-height: 1.6;
+      color: #f3f3f3;
+    }
+
+    .content p:last-of-type {
+      margin-bottom: 40px;
+    }
+
+    .btn-login {
+      background-color: #ffc107;
+      color: #1b1b1b;
+      padding: 15px 35px;
+      font-size: 18px;
+      font-weight: 600;
+      border: none;
+      border-radius: 10px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    }
+
+    .btn-login:hover {
+      background-color: #e0a800;
+    }
+
+    footer {
+      padding: 20px 60px;
+      text-align: right;
+      font-size: 14px;
+      font-weight: 400;
+      color: #eee;
+      background-color: transparent;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px 20px;
+      }
+
+      nav {
+        margin-top: 10px;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      nav a {
+        margin: 8px 0;
+        font-size: 14px;
+      }
+
+      .main-wrapper {
+        justify-content: center;
+        padding: 40px 20px;
+      }
+
+      .content {
+        margin-left: 0;
+        text-align: center;
+      }
+
+      .content h1 {
+        font-size: 32px;
+      }
+
+      .btn-login {
+        padding: 12px 25px;
+        font-size: 16px;
+      }
+
+      footer {
+        text-align: center;
+        padding: 15px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="brand">MARKET WATCH</div>
+    <nav>
+      <a href="#" class="active">Home</a>
+      <a href="#">About</a>
+      <a href="#">Help</a>
+    </nav>
+  </header>
+
+  <div class="main-wrapper">
+    <div class="content">
+      <h1>
+        THE SMARTER WAY<br>
+        TO LEARN THE<br>
+        <span>STOCK MARKET</span>
+      </h1>
+      <p>Ready to find out how much you really know about the stock market?</p>
+      <p>Take the test and boost your confidence today!</p>
+      <a href="/login" class="btn-login">LEARN MORE</a>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Marketwatch.com, All rights reserved.
+  </footer>
+
+</body>
+</html>

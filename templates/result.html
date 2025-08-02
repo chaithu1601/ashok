@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Professional Exam Result</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background: url('{{ url_for('static', filename='images/12.png') }}') no-repeat center center fixed;
+      background-size: cover;
+      margin: 0;
+      padding: 0 20px;
+      color: #333;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 30px auto;
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      
+    }
+
+    .header {
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    .header h1 {
+      font-size: 32px;
+      color: #2c3e50;
+      margin-bottom: 5px;
+    }
+
+    .score-summary {
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .score-summary h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: #0077cc;
+    }
+
+    .feedback-section {
+      margin-bottom: 30px;
+    }
+
+    .feedback-card {
+      background-color: #ffffff;
+      border-left: 6px solid #ccc;
+      padding: 16px 20px;
+      border-radius: 10px;
+      margin-bottom: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    .feedback-card.good { border-left-color: #4caf50; }
+    .feedback-card.average { border-left-color: #ff9800; }
+    .feedback-card.weak { border-left-color: #f44336; }
+
+    .question-box {
+      background-color: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 25px;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .question-box h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 10px;
+    }
+
+    li {
+      padding: 4px 0;
+    }
+
+    .correct {
+      color: green;
+      font-weight: 600;
+    }
+
+    .incorrect {
+      color: red;
+      font-weight: 600;
+    }
+
+    .highlight {
+      background: #e0f7fa;
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+
+    .answer-tag {
+      display: inline-block;
+      padding: 2px 6px;
+      font-size: 14px;
+      border-radius: 6px;
+      margin-left: 10px;
+    }
+
+    .answer-tag.correct {
+      background-color: #c8e6c9;
+      color: #2e7d32;
+    }
+
+    .answer-tag.incorrect {
+      background-color: #ffcdd2;
+      color: #c62828;
+    }
+
+    .btn-print {
+      background-color: #1976d2;
+      color: white;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      display: block;
+      margin: 40px auto 0;
+    }
+
+    .btn-print:hover {
+      background-color: #125aa6;
+    }
+
+    @media (max-width: 600px) {
+      .score-summary h2 {
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Your Exam Results</h1>
+    </div>
+
+    <div class="score-summary">
+      <h2>Total Score: {{ score }} / {{ total }}</h2>
+      <p>Well done! Review your answers and feedback below.</p>
+    </div>
+
+    {% if feedback %}
+    <div class="feedback-section">
+      <h2>Topic-wise Feedback</h2>
+      {% for f in feedback %}
+        <div class="feedback-card 
+            {% if 'performed well' in f %}good{% elif 'average' in f %}average{% else %}weak{% endif %}">
+          {{ f|safe }}
+        </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    {% for r in results %}
+    <div class="question-box">
+      <h3>Q{{ loop.index }}. {{ r.question }}</h3>
+      <p><strong>Topic:</strong> {{ r.main_topic }}</p>
+      <ul>
+        {% for key, val in r.options.items() %}
+          <li><strong>{{ key }}:</strong> {{ val }}</li>
+        {% endfor %}
+      </ul>
+
+      {% if r.selected and r.selected != 'No answer selected' %}
+        <p>Your Answer: <strong>{{ r.selected }} - {{ r.options[r.selected] }}</strong>
+          {% if r.is_correct %}
+            <span class="answer-tag correct">✔ Correct</span>
+          {% else %}
+            <span class="answer-tag incorrect">✖ Incorrect</span>
+          {% endif %}
+        </p>
+      {% else %}
+        <p class="incorrect">Your answer: No answer selected 
+          <span class="answer-tag incorrect">✖ Incorrect</span>
+        </p>
+      {% endif %}
+
+      <p>✅ Correct Answer: <strong>{{ r.correct }} - {{ r.options[r.correct] }}</strong></p>
+      <p><strong>Explanation:</strong> {{ r.explanation }}</p>
+      <p><strong> Example:</strong> {{ r.example }}</p>
+    </div>
+    {% endfor %}
+
+    <button class="btn-print" onclick="window.print()">🖨️ Print Result</button>
+  </div>
+</body>
+</html>

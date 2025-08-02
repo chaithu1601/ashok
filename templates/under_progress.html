@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Portfolio - Coming Soon</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Public Sans', sans-serif;
+      background: url('{{ url_for('static', filename='images/d.png') }}') no-repeat center center fixed;
+      background-size: cover;
+      color: #ffffff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      background-color: transparent;
+      z-index: 10;
+    }
+
+    .brand {
+      font-size: 32px;
+      font-weight: 800;
+      color: #ffc107;
+      letter-spacing: 1px;
+      margin-left: 150px;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      margin-left: 40px;
+      font-weight: 600;
+      font-size: 16px;
+      position: relative;
+      padding-bottom: 4px;
+      transition: all 0.2s ease-in-out;
+    }
+
+    nav a:hover::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 2px;
+      width: 100%;
+      background: #00bcd4;
+    }
+
+    /* Main content now aligned to bottom */
+    .main-wrapper {
+      margin-top: auto;
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .main {
+      background: rgba(0, 0, 0, 0.4);
+      padding: 40px 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      max-width: 700px;
+      text-align: center;
+      background-color: transparent;
+    }
+
+    .main h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+    }
+
+    .main p {
+      font-size: 20px;
+      margin: 12px 0;
+      line-height: 1.6;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Footer */
+    footer {
+      padding: 20px 60px;
+      text-align: right;
+      font-size: 14px;
+      font-weight: 400;
+      color: #eee;
+      background-color: transparent;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px 20px;
+      }
+
+      nav {
+        margin-top: 10px;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      nav a {
+        margin: 8px 0;
+        font-size: 14px;
+      }
+
+      .brand {
+        margin-left: 0;
+      }
+
+      .main {
+        padding: 30px 20px;
+      }
+
+      .main h2 {
+        font-size: 28px;
+      }
+
+      .main p {
+        font-size: 18px;
+      }
+
+      footer {
+        text-align: center;
+        padding: 15px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="brand">MARKET WATCH</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Help</a>
+    </nav>
+  </header>
+
+  <!-- Main message pushed to bottom -->
+  <div class="main-wrapper">
+    <div class="main">
+      <h2>Portfolio Feature Coming Soon</h2>
+      <p>We’re crafting smart insights to help you track topic-wise progress, scores, and performance.</p>
+      <p>Stay tuned!</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Marketwatch.com, All rights reserved.
+  </footer>
+
+</body>
+</html>
