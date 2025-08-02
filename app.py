@@ -9,13 +9,16 @@ app.secret_key = 'secretkey'
 # Set number of quiz questions here
 QUESTION_LIMIT = 60  # 🔧 Change this to 30, 40, or 60
 
+# ✅ Use safe file paths for both local and Render
+basedir = os.path.dirname(__file__)
+
 # Load topics
-with open('data/topics.json') as f:
+with open(os.path.join(basedir, 'data', 'topics.json'), 'r', encoding='utf-8') as f:
     TOPICS = json.load(f)
 
 # Load all questions
 def load_questions():
-    with open('data/questions.json', 'r', encoding='utf-8') as f:
+    with open(os.path.join(basedir, 'data', 'questions.json'), 'r', encoding='utf-8') as f:
         return json.load(f)["questions"]
 
 # Global question bank
@@ -187,3 +190,4 @@ def result():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
