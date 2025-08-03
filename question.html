@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Question {{ index + 1 }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Fonts: Patrick Hand -->
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: url('/static/images/e.png') no-repeat center center fixed;
+            background-size: cover;
+            padding: 20px;
+            margin: 0;
+        }
+
+        .container {
+            font-family: 'Patrick Hand', cursive;
+            background: rgba(0, 0, 0, 0.65); /* Dark semi-transparent background */
+            padding: 0px;
+            max-width: 800px;
+            margin: 60px auto;
+            border-radius: 12px;
+            transition: transform 0.3s ease;
+            color: white;
+            text-align: center;
+            background-color: transparent;
+        }
+
+        .container:hover {
+            transform: scale(1.01);
+        }
+
+        h2 {
+            margin-bottom: 10px;
+            color: #fff;
+            font-size: 60px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        p {
+            font-size: 40px;
+            margin-bottom: 0px;
+            text-align: left;
+            line-height: 1.5;
+        }
+
+        .option {
+            margin: 20px 0;
+            text-align: left;
+            padding-left: 0%;
+        }
+
+        .option input[type="radio"] {
+            margin-right: 30px;
+            transform: scale(1.4);
+            cursor: pointer;
+        }
+
+        label {
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        .submit-btn {
+            margin-top: 1px;
+            padding: 14px 32px;
+            background-color: #00bcd4;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 20px;
+            font-weight: bold;
+            box-shadow: 0 6px 18px rgba(0, 188, 212, 0.4);
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .submit-btn:hover {
+            background-color: #0097a7;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 25px;
+                margin: 30px 15px;
+            }
+
+            h2 {
+                font-size: 26px;
+            }
+
+            p {
+                font-size: 20px;
+            }
+
+            label {
+                font-size: 18px;
+            }
+
+            .option {
+                padding-left: 0;
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Question {{ index + 1 }} of {{ total }}</h2>
+    <form method="POST" action="/question/{{ index }}">
+        <p><strong>{{ question['question'] }}</strong></p>
+        {% for key, value in question['options'].items() %}
+            <div class="option">
+                <input type="radio" id="option_{{ key }}" name="selected" value="{{ key }}" required>
+                <label for="option_{{ key }}">{{ key }}. {{ value }}</label>
+            </div>
+        {% endfor %}
+        <input type="submit" value="Submit" class="submit-btn">
+    </form>
+</div>
+</body>
+</html>

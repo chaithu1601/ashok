@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login | Equity Exam</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Public Sans', sans-serif;
+      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+                  url('{{ url_for('static', filename='images/b.png') }}') no-repeat center center fixed;
+      background-size: cover;
+      color: #ffffff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      background-color: transparent;
+      z-index: 10;
+    }
+
+    .brand {
+      font-size: 32px;
+      font-weight: 800;
+      color: #ffc107;
+      letter-spacing: 1px;
+      margin-left: 150px; /* Moved further right */
+      background-color: transparent; /* Transparent background */
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      margin-left: 40px;
+      font-weight: 600;
+      font-size: 16px;
+      position: relative;
+      padding-bottom: 4px;
+      transition: all 0.2s ease-in-out;
+    }
+
+    nav a:hover::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 2px;
+      width: 100%;
+      background: #00bcd4;
+    }
+
+    .login-wrapper {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+      background-color: transparent;
+      
+    }
+
+    .login-container {
+      width: 100%;
+      max-width: 450px;
+      padding: 50px 40px;
+      background-color: rgba(255, 255, 255, 0.92);
+      border-radius: 20px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      margin-left: 200px;
+      background-color: transparent;
+    }
+
+    .login-container h2 {
+      margin-bottom: 10px;
+      color: #f9f9f9;
+      font-size: 28px;
+    }
+
+    .login-container p {
+      color: #04cff7;
+      font-size: 15px;
+      margin-bottom: 30px;
+    }
+
+    .login-container input[type="email"] {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      margin-bottom: 25px;
+      font-size: 16px;
+    }
+
+    .login-container button {
+      background-color: #ffc107;
+      color: #1b1b1b;
+      padding: 14px 25px;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      width: 100%;
+    }
+
+    .login-container button:hover {
+      background-color: #e0a800;
+    }
+
+    footer {
+      padding: 20px 60px;
+      text-align: right;
+      font-size: 14px;
+      font-weight: 400;
+      color: #eee;
+      background-color: transparent;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px 20px;
+      }
+
+      nav {
+        margin-top: 10px;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      nav a {
+        margin: 8px 0;
+        font-size: 14px;
+      }
+
+      .brand {
+        margin-left: 0;
+      }
+
+      .login-container {
+        margin: 20px;
+        padding: 35px 20px;
+      }
+
+      .login-container h2 {
+        font-size: 22px;
+      }
+
+      .login-container button {
+        padding: 12px;
+        font-size: 15px;
+      }
+
+      footer {
+        text-align: center;
+        padding: 15px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="brand">MARKET WATCH</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Help</a>
+    </nav>
+  </header>
+
+  <div class="login-wrapper">
+    <div class="login-container">
+      <h2>Ready to Test Your Market Skills?</h2>
+      <p>Please enter your email to start the test</p>
+      <form method="POST" action="/login">
+        <input type="email" name="email" placeholder="Enter your email" required>
+        <button type="submit">Continue</button>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Marketwatch.com, All rights reserved.
+  </footer>
+
+</body>
+</html>
